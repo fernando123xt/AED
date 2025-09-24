@@ -4,7 +4,15 @@ struct Node;
 struct Node* buildOneTwoThree();
 void printList(struct Node*);
 int length(struct Node*);
-void push(struct Node*,int);
-
-
+void push(struct Node**,int);
+void pushEnd(struct Node**,int);
+void pushEndWithDummyNode(struct Node**,int);
+struct Node* buildWithSpecialCase();
+struct Node* buildWithDummyNode();
+void deleteList(struct Node**);
+void deleteList2_0(struct Node**);
+int pop(struct Node**);
+void insertNth(struct Node**,int,int);
+void sortedInsert(struct Node** , struct Node*);
+void insertSort(struct Node**);
 #endif // !LIST_h
