@@ -17,4 +17,5 @@ void sortedInsert(struct Node** , struct Node*);
 void insertSort(struct Node**);
 void append(struct Node** ,struct Node**);
 void frontBackSplit(struct Node*,struct Node**,struct Node**);
+void removeDuplicates(struct Node*);
 #endif // !LIST_h

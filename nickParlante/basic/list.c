@@ -175,19 +175,40 @@ void append(struct Node** aRef, struct Node** bRef){
 void frontBackSplit(struct Node* source, struct Node** frontRef, struct Node** backRef){
   struct Node* turtle;
   struct Node* rabbit;
-  if(source && source->next){
+  if(source == NULL || source->next == NULL){
+    *frontRef = source;
+    *backRef = NULL;
+  }
+  else{
     turtle = source;
     rabbit = source->next;
     while(rabbit){
       turtle = turtle->next;
-      rabbit = rabbit->next->next;
+      rabbit = rabbit->next;
+      if(rabbit){
+        rabbit = rabbit->next;
+      }
     }
     *frontRef = source;
-    *backRef  = turtle->next;
-    turtle->next = NULL;
-
-    
-    
-
+    *backRef = turtle->next;
+    turtle->next  = NULL;
   }
  }
+
+void removeDuplicates(struct Node* current){
+  struct Node* next;
+  if(current == NULL){
+    return;
+  }
+  else{
+    while(current->next){
+      if(current->data == current->next->data){
+        next = current->next;
+        current->next = current->next->next;
+        free(current);
+      }
+      else{
+        current = next;
+      } 
+    }
+}
