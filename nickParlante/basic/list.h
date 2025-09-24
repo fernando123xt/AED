@@ -15,4 +15,6 @@ int pop(struct Node**);
 void insertNth(struct Node**,int,int);
 void sortedInsert(struct Node** , struct Node*);
 void insertSort(struct Node**);
+void append(struct Node** ,struct Node**);
+void frontBackSplit(struct Node*,struct Node**,struct Node**);
 #endif // !LIST_h

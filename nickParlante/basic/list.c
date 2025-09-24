@@ -158,3 +158,36 @@ void insertSort(struct Node** head){
   }
   *head = result;
 }
+void append(struct Node** aRef, struct Node** bRef){
+  struct Node* current = *aRef;
+  if(*aRef == NULL){
+    *aRef = *bRef;
+    *bRef = NULL;
+  }
+  else{
+    while(current->next){
+      current = current->next;
+    }
+    current->next = *bRef;
+    *bRef = NULL;
+  }
+}
+void frontBackSplit(struct Node* source, struct Node** frontRef, struct Node** backRef){
+  struct Node* turtle;
+  struct Node* rabbit;
+  if(source && source->next){
+    turtle = source;
+    rabbit = source->next;
+    while(rabbit){
+      turtle = turtle->next;
+      rabbit = rabbit->next->next;
+    }
+    *frontRef = source;
+    *backRef  = turtle->next;
+    turtle->next = NULL;
+
+    
+    
+
+  }
+ }
